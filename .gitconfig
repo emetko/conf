@@ -5,9 +5,13 @@
 	tool = meld
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
+	autocrlf = input
 [color]
 	ui = true
 [url "https://"]
 	insteadOf = git://
 [credential]
 	helper = cache --timeout=7200
+[alias]
+	squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-A new start}\");};f"
